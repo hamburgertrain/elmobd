@@ -1091,7 +1091,7 @@ func (cmd *EngineOilTemperature) SetValue(result *Result) error {
 // AbsoluteBarometricPressure
 type AbsoluteBarometricPressure struct {
 	baseCommand
-	IntCommand
+	UIntCommand
 }
 
 // NewCoolantTemperature creates a new CoolantTemperature with the right
@@ -1099,7 +1099,7 @@ type AbsoluteBarometricPressure struct {
 func NewAbsoluteBarometricPressure() *AbsoluteBarometricPressure {
 	return &AbsoluteBarometricPressure{
 		baseCommand{SERVICE_01_ID, 0x33, 1, "absolute_barometric_pressure"},
-		IntCommand{},
+		UIntCommand{},
 	}
 }
 
@@ -1111,7 +1111,7 @@ func (cmd *AbsoluteBarometricPressure) SetValue(result *Result) error {
 		return err
 	}
 
-	cmd.Value = int(payload)
+	cmd.Value = uint32(payload)
 
 	return nil
 }
