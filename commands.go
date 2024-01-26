@@ -1088,7 +1088,11 @@ func (cmd *EngineOilTemperature) SetValue(result *Result) error {
 	return nil
 }
 
-// AbsoluteBarometricPressure
+// AbsoluteBarometricPressure represents a command that checks the absolute
+// barometric pressure in kPa
+//
+// Min: 0
+// Max: 255
 type AbsoluteBarometricPressure struct {
 	baseCommand
 	UIntCommand
