@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.8.2] - 2024-01-25
+### Added
+- Added Turbo Compressor Inlet Pressure command
+
 ## [0.8.1] - 2022-09-08
 ### Added
 - Added Odometer & TransmissionActualGear commands

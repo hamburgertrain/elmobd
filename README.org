@@ -2,11 +2,6 @@
 
 * README
 
-[[file:https://img.shields.io/badge/status-active-green.svg]]
-[[https://travis-ci.org/rzetterberg/elmobd][file:https://travis-ci.org/rzetterberg/elmobd.svg?branch=master]]
-[[https://goreportcard.com/report/github.com/rzetterberg/elmobd][file:https://goreportcard.com/badge/github.com/rzetterberg/elmobd?status.svg]]
-[[https://godoc.org/github.com/rzetterberg/elmobd][file:https://godoc.org/github.com/rzetterberg/elmobd?status.svg]]
-
 #+NAME: version_output
 #+begin_src emacs-lisp :results raw :exports results
 (with-temp-buffer
@@ -15,7 +10,7 @@
 #+end_src
 
 #+RESULTS: version_output
-- Version :: 0.8.0
+- Version :: 0.8.2
 
 Go library for communicating with cars [[https://en.wikipedia.org/wiki/On-board_diagnostics][OBD-II]] system using [[https://www.elmelectronics.com/ic/elm327/][ELM327]] based
 USB-devices.
@@ -374,8 +369,9 @@ The library has been built and tested on the following platforms:
 
 The library has been used successfully on the following cars:
 
-| Car                       | Library version | Tester       |
-|---------------------------+-----------------+--------------|
-| Lexus IS200 Manual 2004   |           0.3.0 | @rzetterberg |
-| Ford Ka 2011              |           0.5.0 | @Enrico204   |
-| Ford Transit Automat 2019 |           0.6.0 | @mikspec     |
+| Car                       | Library version | Tester          |
+|---------------------------+-----------------+-----------------|
+| Lexus IS200 Manual 2004   |           0.3.0 | @rzetterberg    |
+| Ford Ka 2011              |           0.5.0 | @Enrico204      |
+| Ford Transit Automat 2019 |           0.6.0 | @mikspec        |
+| Mazda 3 Turbo 2021        |           0.8.2 | @hamburgertrain |
