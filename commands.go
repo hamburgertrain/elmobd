@@ -231,10 +231,10 @@ func (part *PartSupported) CommandInRange(cmd OBDCommand) bool {
 //
 // In order to check if a bit is active, we can either:
 //
-// - Shift the bits of the value to the right until the bit we want to check
-//   has the position D0 and then use a AND bitwise conditional with the mask 0x1
-// - Shift the bits of the mask 0x1 to the left until it has the same position as
-//   the bit we want to check and then use a AND bitwise conditional with value
+//   - Shift the bits of the value to the right until the bit we want to check
+//     has the position D0 and then use a AND bitwise conditional with the mask 0x1
+//   - Shift the bits of the mask 0x1 to the left until it has the same position as
+//     the bit we want to check and then use a AND bitwise conditional with value
 //
 // This function uses the first method of checking if the bit is active.
 //
@@ -1112,6 +1112,34 @@ func (cmd *AbsoluteBarometricPressure) SetValue(result *Result) error {
 	}
 
 	cmd.Value = int(payload)
+
+	return nil
+}
+
+// TurbochargerCompressorInletPressure
+type TurbochargerCompressorInletPressure struct {
+	baseCommand
+	FloatCommand
+}
+
+// NewTurbochargerCompressorInletPressure creates a new TurbochargerCompressorInletPressure
+// with the right parameters.
+func NewTurbochargerCompressorInletPressure() *TurbochargerCompressorInletPressure {
+	return &TurbochargerCompressorInletPressure{
+		baseCommand{SERVICE_01_ID, 111, 3, "turbocharger_compressor_inlet_pressure"},
+		FloatCommand{},
+	}
+}
+
+// SetValue processes the byte array value into the right float32 value.
+func (cmd *TurbochargerCompressorInletPressure) SetValue(result *Result) error {
+	payload, err := result.PayloadAsByte()
+
+	if err != nil {
+		return err
+	}
+
+	cmd.Value = float32(payload)
 
 	return nil
 }
