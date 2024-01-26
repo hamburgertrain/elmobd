@@ -4,7 +4,7 @@ import (
 	"flag"
 	"fmt"
 
-	"github.com/rzetterberg/elmobd"
+	"github.com/hamburgertrain/elmobd"
 )
 
 func main() {
