@@ -1,6 +1,6 @@
 module github.com/hamburgertrain/elmobd
 
-go 1.21.6
+go 1.23.2
 
 //replace github.com/hamburgertrain/elmobd => github.com/samifruit514/elmobd master
 
